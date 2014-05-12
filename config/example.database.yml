@@ -1,0 +1,28 @@
+#Example database configuration
+
+#SQlite3
+development: 
+  adapter: sqlite3
+  database: db/development.sqlite3
+  pool: 5
+  timeout: 5000
+
+#Mysql
+development:
+  adapter: mysql2
+  encoding: utf8
+  database: database_name
+  pool: 5
+  username: root
+  password:
+  socket: /tmp/mysql.sock
+
+
+#Postgresql
+development:
+  adapter: postgresql
+  encoding: unicode
+  database: database_name
+  pool: 5
+  username: blog
+  password:
