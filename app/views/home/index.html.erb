@@ -1,2 +1,11 @@
-<h1> SOCIAL NETWORK</h1>
-<p class="center"><%= @time%></p>
+<div class="row">
+<div class="col-md-12">
+  <div class="jumbotron">
+    <h1> SOCIAL NETWORK</h1>
+    <p class="center">
+      <%= link_to 'Sign Up', signup_path, class: 'btn btn-large btn-primary'  %>
+    </p>
+    <p class="center"><%= @time%></p>
+  </div>
+</div>
+</div>
