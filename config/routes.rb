@@ -1,7 +1,7 @@
 Rails.application.routes.draw do
 
   resources :users
-
+  resources :sessions, only: [:new, :create, :destroy]
   namespace :admin do
     root 'dashboard#index'
   end
@@ -15,6 +15,8 @@ Rails.application.routes.draw do
   # root 'welcome#index'
   root 'home#index'
   match '/signup', to: 'users#new',         via: 'get'
+  match '/signin', to: 'sessions#new',      via: 'get'
+  match '/signout', to: 'sessions#destroy',  via: 'delete'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
