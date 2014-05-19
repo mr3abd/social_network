@@ -1,10 +1,11 @@
 Rails.application.routes.draw do
-  get 'users/new'
+
+  resources :users
 
   namespace :admin do
     root 'dashboard#index'
   end
-
+  
   get 'home/index'
 
   # The priority is based upon order of creation: first created -> highest priority.
@@ -13,6 +14,7 @@ Rails.application.routes.draw do
   # You can have the root of your site routed with "root"
   # root 'welcome#index'
   root 'home#index'
+  match '/signup', to: 'users#new',         via: 'get'
   # Example of regular route:
   #   get 'products/:id' => 'catalog#view'
 
