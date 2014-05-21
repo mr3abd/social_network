@@ -6,8 +6,8 @@ class SessionsController < ApplicationController
   def create
     user = User.find_by(email: params[:session][:email].downcase)
     if user && user.authenticate(params[:session][:password])
-    sign_in user
-    #session[:user_id] = user.id
+    #sign_in user
+    session[:user_id] = user.id
     flash[:success] = "Welcome in Social Network 2014 #{user.name}"
     redirect_to user
     else
@@ -17,8 +17,9 @@ class SessionsController < ApplicationController
   end
   
   def destroy
-    #session[:user_id] = nil
-    #redirect_to root_url
+    session[:user_id] = nil
+    flash[:info] = 'Logged out'
+    redirect_to root_url
   end
   
 end

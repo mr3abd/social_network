@@ -11,17 +11,22 @@
     </div>
     <div class="navbar-collapse collapse">
       
-    <%= form_for(:session, url: sessions_path, :html =>{class: "navbar-form navbar-right"}) do |f| %>
-      <div class="form-group">
-        <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
-      </div>
-
-      <div class="form-group">
-        <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
-      </div>
-
-      <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
-    <% end %>
+      <% if current_user %>
+        <ul class="nav navbar-nav navbar-right">
+        <li> <%= link_to current_user.email, user_path(current_user.id) %></li>
+        <li><%= link_to "Log Out", session_path("current"), method: "delete" %></li>
+        </ul>
+      <% else %>
+        <%= form_for(:session, url: sessions_path, :html =>{class: "navbar-form navbar-right"}) do |f| %>
+          <div class="form-group">
+            <%= f.text_field :email, class: "form-control", placeholder: "Email" %>
+          </div>
+          <div class="form-group">
+            <%= f.password_field :password, class: "form-control", placeholder: "Password" %>
+          </div>
+          <%= f.submit "Sign in", class: "btn btn-large btn-primary" %>
+        <% end %>
+      <% end %>    
     <!--
       <form class="navbar-form navbar-right" role="form">
         <div class="form-group">
