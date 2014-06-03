@@ -1,6 +1,12 @@
 Rails.application.routes.draw do
 
-  resources :users
+  resources :users do
+    resources :profiles
+    resources :posts
+  end
+  
+
+
   resources :sessions, only: [:new, :create, :destroy]
   namespace :admin do
     root 'dashboard#index'
