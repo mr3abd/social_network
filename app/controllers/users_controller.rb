@@ -33,13 +33,6 @@ class UsersController < ApplicationController
                                    :password_confirmation)
     end
   
-    def signed_in_user
-      unless signed_in?
-        flash[:danger] ="Please sign in"
-        redirect_to signin_url
-      end
-      #redirect_to signin_url, notice: "Please sign in." unless signed_in?
-    end
     
     def correct_user
       @user = User.find(params[:id])
