@@ -6,7 +6,6 @@ Rails.application.routes.draw do
   end
   
 
-
   resources :sessions, only: [:new, :create, :destroy]
   namespace :admin do
     root 'dashboard#index'

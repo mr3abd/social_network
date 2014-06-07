@@ -1,17 +1,15 @@
-<%= provide(:title, @user.name)%>
 <div class="row">
   <div class ="col-md-3">
-
       <%= render partial: "shared/sidebar_user"%> 
     <hr>
   </div>
   
   <div class="col-md-9">
     <div class="jumbotron">
-      <h3>Account</h3>
+      <h3>Profilo</h3>
       <small>Modifica le impostaioni di base del tuo account</small>
       <hr>
-        
+       <%= @profile.description%> 
     </div>
   </div>
 

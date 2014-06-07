@@ -1,0 +1,19 @@
+<%= gravatar_for current_user%>
+<hr>
+<div class="panel panel-default">
+ <!-- <div class="panel-heading">
+    <h4 class="panel-title text-center">PROFILE</h4>
+  </div>
+  -->
+  <div class="list-group">
+    <a href="<%= user_path(current_user)%>" class="list-group-item">
+      <p class="list-group-item-text">Account</p>
+    </a>
+    <a href="#" class="list-group-item">
+      <p class="list-group-item-text">Password</p>
+    </a>
+    <a href="<%= user_profile_path(current_user.id,current_user.profile)%>" class="list-group-item">
+      <p class="list-group-item-text">Profile</p>
+    </a>
+  </div>
+</div>
