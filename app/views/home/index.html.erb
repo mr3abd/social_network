@@ -1,11 +1,38 @@
 <div class="row">
-<div class="col-md-12">
-  <div class="jumbotron">
-    <h1> SOCIAL NETWORK</h1>
-    <p class="center">
-      <%= link_to 'Sign Up', signup_path, class: 'btn btn-large btn-primary'  %>
-    </p>
-    <p class="center"><%= @time%></p>
+  <div class="col-md-12">
+    <div class="jumbotron">
+      <div class="row">
+        <h1> SOCIAL NETWORK 2014</h1>
+      </div>
+      <hr>
+      <div class="row">
+        
+        <div class="col-md-6">
+          <p>
+          Social Network 2014, si tratta di un'applicazione Ruby on Rails sviluppata durante il corso di sistemi informativi, presso l'Università degli Studi di Catania.
+          Il corso è stato tenuto dal Prof. Alberto Faro.
+          </p>
+          <p>
+            <%= link_to 'Sign Up', signup_path, class: 'btn btn-primary btn-lg btn-block'  %>
+            <%= link_to 'Sign In', signin_path, class: 'btn btn-default btn-lg btn-block'  %>
+          </p>
+        </div>
+      
+        <div class="col-md-5 col-md-offset-1">
+          <h4>CARATTERISITICHE TECNICHE DELL'APPLICAZIONE</h4>
+          <ul>
+            <li>RUBY ON RAILS 4.1.1</li>
+            <li>RUBY 2.1.1</li>
+            <li>"GEM BOOTSTRAP" PER IL LAYOUT</li>
+            <li>"GEM BCRYPT" PER L'AUTENTICAZIONE</li>
+            <li>REPOSITORY SU GITHUB <a href="https://github.com/AscWebApps/social_network">SOCIAL NETWORK 2014</a></li>
+            <li><a href="http://www.antoninoscaffidi.it/courses/1-ruby-on-rails">DOCUMENTAZIONE</a></li>
+          <ul>
+        </div>
+
+      </div>
+         <hr>
+         <p class="center"><%= @time.strftime("%d %b,%Y")%></p>
   </div>
 </div>
 </div>
