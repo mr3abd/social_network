@@ -1,5 +1,5 @@
 class SessionsController < ApplicationController
-  
+    
   def new
   end
   
@@ -9,9 +9,9 @@ class SessionsController < ApplicationController
     sign_in user
     #session[:user_id] = user.id
     flash[:success] = "Welcome in Social Network 2014 #{user.name}"
-    redirect_to user
+    redirect_to root_url
     else
-      flash[:danger] = 'Invalid email/password combination'
+      flash.now[:danger] = 'Invalid email/password combination'
       render 'new'
     end
   end

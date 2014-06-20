@@ -1,10 +1,11 @@
 class ProfilesController < ApplicationController
   
-  before_action :find_profile, only: [:show, :edit, :update, :destroy]
+  #before_action :find_profile, only: [:show, :edit, :update, :destroy]
   before_action :signed_in_user
  
   def show
-    @profile = Profile.find(params[:id])
+    @user = User.find(params[:user_id])
+    @profile = @user.profile
   end
 
   def new
